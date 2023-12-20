@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'jacoco'
+    id 'application'
 }
 
 repositories {
@@ -41,5 +42,9 @@ allprojects {
             options.compilerArgs << "-Xlint:unchecked"
         }
     }
+}
+
+task myJavadocs(type: Javadoc) {
+    source = sourceSets.main.allJava
 }
 
